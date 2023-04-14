@@ -204,7 +204,7 @@ def pregunta_11():
     39   39    a,d,f
     """
     registros= tbl1.groupby('_c0')['_c4'].apply(lambda x:  ','.join(map(str,sorted(list(x)))) )
-    registros= pd.DataFrame(registros).reset_index
+    registros= pd.DataFrame(registros).reset_index()
     
     return registros
 
@@ -225,7 +225,10 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    registros= tbl2.groupby('_c0').apply(lambda x: ','.join(sorted((x['_c5a'].astype(str)+":"+x['_c5b'].astype(str)))))
+    registros= pd.DataFrame(registros).reset_index()
+    registros.columns =['_c0','_c5']
+    return registros   
 
 
 def pregunta_13():
@@ -242,4 +245,6 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    join= pd.merge(tbl0,tbl2, on = '_c0')
+    registros= join.groupby('_c1')['_c5b'].sum()
+    return registros
