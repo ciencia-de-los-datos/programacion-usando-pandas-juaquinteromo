@@ -182,7 +182,9 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+    registros= tbl0.groupby('_c1')['_c2'].apply(lambda x:  ':'.join(map(str,sorted(list(x)))) )
+    registros= pd.DataFrame(registros)
+    return registros
 
 
 def pregunta_11():
@@ -201,7 +203,11 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    registros= tbl1.groupby('_c0')['_c4'].apply(lambda x:  ','.join(map(str,sorted(list(x)))) )
+    registros= pd.DataFrame(registros)
+    
+    return registros
+
 
 
 def pregunta_12():
