@@ -69,9 +69,8 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    registros= tbl0.groupby('_c1').mean()
-    registros=registros['_c2']
-    registros
+    registros= tbl0.groupby('_c1')['_c2'].mean()
+    registros 
     return registros
 
 
