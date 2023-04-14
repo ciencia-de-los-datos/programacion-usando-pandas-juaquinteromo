@@ -52,7 +52,9 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    registros= tbl0.groupby('_c1').count()
+    registros=registros['_c0']
+    return registros
 
 
 def pregunta_04():
@@ -67,6 +69,9 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
+    registros= tbl0.groupby('_c1').mean()
+    registros=registros['_c2']
+    registros
     return
 
 
@@ -84,7 +89,9 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    registros= tbl0.groupby('_c1').max()
+    registros=registros['_c2']
+    return registros
 
 
 def pregunta_06():
@@ -96,7 +103,12 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    valores_unicos = tbl1['_c4'].unique()
+    valores_unicos = valores_unicos.tolist()
+    valores_unicos = [x.upper() for x in valores_unicos ]
+    valores_unicos = sorted(list(set(valores_unicos)))
+
+    return valores_unicos
 
 
 def pregunta_07():
@@ -112,7 +124,10 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    registros= tbl0.groupby('_c1').sum()
+    registros=registros['_c2']
+    registros
+    return registros
 
 
 def pregunta_08():
