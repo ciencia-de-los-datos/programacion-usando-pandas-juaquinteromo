@@ -22,7 +22,8 @@ def pregunta_01():
     40
 
     """
-    return
+    filas=tbl0.shape[0]
+    return filas
 
 
 def pregunta_02():
@@ -33,7 +34,8 @@ def pregunta_02():
     4
 
     """
-    return
+    columnas=tbl0.shape[1]
+    return columnas
 
 
 def pregunta_03():
