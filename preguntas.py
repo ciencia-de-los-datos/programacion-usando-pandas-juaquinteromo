@@ -204,7 +204,7 @@ def pregunta_11():
     39   39    a,d,f
     """
     registros= tbl1.groupby('_c0')['_c4'].apply(lambda x:  ','.join(map(str,sorted(list(x)))) )
-    registros= pd.DataFrame(registros)
+    registros= pd.DataFrame(registros).reset_index
     
     return registros
 
